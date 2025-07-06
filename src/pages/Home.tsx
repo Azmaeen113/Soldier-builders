@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Award, Users, Building, Download, Calendar, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
+import AnimateOnce from '../components/AnimateOnce';
 
 const Home = () => {
   const featuredProjects = [
@@ -169,18 +170,19 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <motion.div
+              <AnimateOnce
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                delay={index * 0.1}
                 className="text-center"
               >
                 <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-400">{stat.label}</div>
-              </motion.div>
+              </AnimateOnce>
             ))}
           </div>
         </div>
@@ -189,9 +191,10 @@ const Home = () => {
       {/* Featured Projects */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <AnimateOnce
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -200,15 +203,16 @@ const Home = () => {
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Discover our premium residential developments that redefine luxury living
             </p>
-          </motion.div>
+          </AnimateOnce>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
-              <motion.div
+              <AnimateOnce
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                delay={index * 0.1}
                 whileHover={{ y: -5 }}
                 className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
               >
@@ -255,7 +259,7 @@ const Home = () => {
                     </motion.button>
                   </Link>
                 </div>
-              </motion.div>
+              </AnimateOnce>
             ))}
           </div>
 
@@ -325,9 +329,10 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <AnimateOnce
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -336,15 +341,16 @@ const Home = () => {
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Hear from our satisfied clients who have experienced the Soldiers Builders BD difference
             </p>
-          </motion.div>
+          </AnimateOnce>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <AnimateOnce
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                delay={index * 0.1}
                 className="bg-gray-800 p-8 rounded-xl"
               >
                 <div className="flex items-center mb-4">
@@ -359,7 +365,7 @@ const Home = () => {
                   </div>
                 </div>
                 <p className="text-gray-300 leading-relaxed">{testimonial.content}</p>
-              </motion.div>
+              </AnimateOnce>
             ))}
           </div>
         </div>
@@ -368,9 +374,10 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
+          <AnimateOnce
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="space-y-6"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -400,7 +407,7 @@ const Home = () => {
                 </motion.button>
               </Link>
             </div>
-          </motion.div>
+          </AnimateOnce>
         </div>
       </section>
     </div>

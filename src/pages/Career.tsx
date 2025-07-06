@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Award, TrendingUp, Shield } from 'lucide-react';
+import AnimateOnce from '../components/AnimateOnce';
 
 const Career = () => {
   const benefits = [
@@ -100,11 +101,12 @@ const Career = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <AnimateOnce
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                delay={index * 0.1}
                 whileHover={{ y: -5 }}
                 className="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition-all duration-300"
               >
@@ -113,7 +115,7 @@ const Career = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
                 <p className="text-gray-400">{benefit.description}</p>
-              </motion.div>
+              </AnimateOnce>
             ))}
           </div>
         </div>
