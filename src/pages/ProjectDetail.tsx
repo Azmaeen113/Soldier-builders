@@ -292,7 +292,7 @@ const ProjectDetail = () => {
       location: "Sector-06, Road# 406, Plot# 106, Jolshiri Abashon, Dhaka",
       image: "/assets/images/projects/mehnaz/WhatsApp Image 2025-05-29 at 14.56.13_eb9014f6.jpg",
       description: "Distinguished north-east frontage on 140 ft road — where elegance meets easy access.",
-      detailedDescription: "Chandra Neer offers distinguished north-east frontage on 140 ft road, where elegance meets easy access. This North East Facing Plot provides residents with excellent connectivity and accessibility while maintaining the luxury and comfort expected from Soldiers Builders BD developments.",
+      detailedDescription: "Chandra Neer offers distinguished north-east frontage on 140 ft road, where elegance meets easy access. This North East Facing Plot provides residents with excellent connectivity and accessibility while maintaining the luxury and comfort expected from Soldiers Builders developments.",
       landSize: "5 Katha (3600 SFT)",
       buildingType: "G+M+8",
       apartments: 8,
@@ -357,7 +357,7 @@ const ProjectDetail = () => {
       name: "Bondhu Bilash",
       location: "BLDG # 11, Road # 4, Block # C, Chondrima Model Town, Mohammadpur, Dhaka",
       image: "/assets/images/projects/bondhu-bilash/WhatsApp Image 2025-06-22 at 3.10.15 PM.jpeg",
-      description: "Making Dreams Come to Life",
+      description: "We build your dreams",
       detailedDescription: "Bondhu Bilash represents our commitment to excellence in completed luxury residential developments. This prestigious project in Chondrima Model Town showcases our ability to deliver on time with uncompromising quality.",
       landSize: "5 Katha (3600 SFT)",
       buildingType: "G+9",
@@ -390,7 +390,7 @@ const ProjectDetail = () => {
       name: "Chondrima Bilash",
       location: "BLDG # 10, Road # 9, Block # B, Chondrima Model Town, Mohammadpur, Dhaka",
       image: "/assets/images/projects/chandrima-bilash/WhatsApp Image 2025-06-22 at 3.21.45 PM.jpeg",
-      description: "Making Dreams Come to Life",
+      description: "We build your dreams",
       detailedDescription: "Chondrima Bilash represents our commitment to excellence in completed luxury residential developments. This prestigious project in Chondrima Model Town showcases our ability to deliver on time with uncompromising quality.",
       landSize: "6 Katha (4320 SFT)",
       buildingType: "B+G+9",
@@ -469,10 +469,18 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800" style={{ marginTop: '64px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/assets/images/SB_Logo_white_background-removebg-preview copy.png"
+              alt="Soldiers Builders Logo"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -486,7 +494,10 @@ const ProjectDetail = () => {
               Back to Projects
             </Link>
             <div className="flex items-center mb-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mr-4">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mr-4" style={{
+                WebkitTextStroke: '0.8px #000',
+                textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+              }}>
                 {project.name}
               </h1>
               <span className={`px-4 py-2 rounded-full text-sm font-medium ${
@@ -659,16 +670,15 @@ const ProjectDetail = () => {
                 <Phone className="h-5 w-5" />
                 <span>Call Now</span>
               </motion.a>
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-yellow-400 transition-all duration-200 flex items-center space-x-2"
-                >
-                  <Calendar className="h-5 w-5" />
-                  <span>Schedule Visit</span>
-                </motion.button>
-              </Link>
+              <motion.a
+                href="tel:+8801769100680"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-900/20 hover:text-gray-700 transition-all duration-200 flex items-center space-x-2"
+              >
+                <Calendar className="h-5 w-5" />
+                <span>Schedule Visit</span>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

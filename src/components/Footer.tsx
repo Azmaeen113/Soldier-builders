@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Footer = () => {
   const quickLinks = [
@@ -28,6 +29,8 @@ const Footer = () => {
     { name: 'Downloads', href: '/downloads' },
   ];
 
+  const { isDarkMode } = useTheme();
+
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -35,44 +38,58 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 p-2 rounded-lg">
-                <Shield className="h-6 w-6 text-gray-900" />
-              </div>
+              <img
+                src={isDarkMode ? "/assets/images/SB_Logo-removebg-preview.png" : "/assets/images/SB_Logo_white_background-removebg-preview copy.png"}
+                alt="Soldiers Builders Logo"
+                className="h-10 w-auto object-contain drop-shadow"
+                style={{ maxWidth: 48 }}
+              />
               <div>
-                <h3 className="text-xl font-bold text-white">Soldiers Builders BD</h3>
-                <p className="text-sm text-white">Making Dreams Come to Life</p>
+                <h3 className="text-xl font-bold text-white">Soldiers Builders</h3>
+                <p className="text-gray-400 mt-2">
+                  We build your dreams. Synonymous with refined living,
+                  architectural excellence, and uncompromising quality.
+                </p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              We don't just build properties — we craft legacies. Synonymous with refined living, 
-              architectural excellence, and uncompromising quality.
-            </p>
             <div className="flex space-x-4">
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="#"
+                href="https://www.facebook.com/soldiersbuilders/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                aria-label="Follow us on Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                aria-label="Follow us on Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                aria-label="Follow us on LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                aria-label="Subscribe to our YouTube channel"
               >
                 <Youtube className="h-5 w-5" />
               </motion.a>
@@ -131,9 +148,9 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-yellow-400" />
                 <span className="text-gray-400 hover:text-yellow-400">+880 1711-164217</span>
               </a>
-              <a href="mailto:soldiers.builders.bd@gmail.com" className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200">
+              <a href="mailto:info@soldiersbuilders.com" className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200">
                 <Mail className="h-4 w-4 text-yellow-400" />
-                <span className="text-gray-400 hover:text-yellow-400">soldiers.builders.bd@gmail.com</span>
+                <span className="text-gray-400 hover:text-yellow-400">info@soldiersbuilders.com</span>
               </a>
             </div>
           </div>

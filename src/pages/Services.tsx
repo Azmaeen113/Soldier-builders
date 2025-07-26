@@ -64,9 +64,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800" style={{ marginTop: '64px' }}>
         <div className="absolute inset-0">
           <img
             src="/assets/images/projects/mehnaz/WhatsApp Image 2025-05-28 at 15.44.17_a52b477d.jpg"
@@ -76,13 +76,24 @@ const Services = () => {
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/assets/images/SB_Logo_white_background-removebg-preview copy.png"
+              alt="Soldiers Builders Logo"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{
+              WebkitTextStroke: '0.8px #000',
+              textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+            }}>
               Our <span className="text-yellow-400">Services</span>
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">

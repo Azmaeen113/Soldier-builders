@@ -191,21 +191,40 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800" style={{ marginTop: '64px' }}>
+        <div className="absolute inset-0">
+          <img
+            src="/assets/images/projects/haruns-nest/IMG-20250517-WA0013.jpg"
+            alt="About Us Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/assets/images/SB_Logo_white_background-removebg-preview copy.png"
+              alt="Soldiers Builders Logo"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              About <span className="text-yellow-400">Soldiers Builders BD</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{
+              WebkitTextStroke: '0.8px #000',
+              textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+            }}>
+              About <span className="text-yellow-400">Soldiers Builders</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Military precision meets luxury living. We don't just build properties — we craft legacies.
+              Military precision meets luxury living. We build your dreams.
             </p>
           </motion.div>
         </div>
@@ -304,15 +323,11 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-gray-300 leading-relaxed">
                 <p>
-                  At Soldiers Builders BD, we don't just build properties — we craft legacies. Synonymous with
-                  refined living, architectural excellence, and uncompromising quality, Soldiers Builders BD
-                  stands at the forefront of luxury real estate development.
-                </p>
-                <p>
-                  With an unwavering commitment to precision and prestige, our developments reflect elegance 
-                  that transcends trends and endures through generations. Founded on the principles of 
-                  integrity, innovation, and meticulous craftsmanship, Soldiers Builders BD is a symbol of
-                  strength and sophistication.
+                  At Soldiers Builders, we build your dreams. Synonymous with
+                  refined living, architectural excellence, and uncompromising quality, Soldiers Builders
+                  stands as a testament to the perfect fusion of military discipline and civilian innovation.
+                  With a foundation built on trust, integrity, innovation, and meticulous craftsmanship, Soldiers Builders is a symbol of
+                  excellence in the real estate industry.
                 </p>
                 <p>
                   Our name represents our discipline, our dedication to detail, and our relentless pursuit 
@@ -456,24 +471,10 @@ const About = () => {
                   <h3 className="text-2xl font-bold text-white mb-2">Chairman's Message</h3>
                   <h4 className="text-lg text-yellow-400 mb-4">Major Toufikul Muneem</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    "At Soldiers Builders BD, we do more than shape skylines, we shape futures. As someone who
-                    once served in uniform and now serves in leadership, I've learned that true strength isn't
-                    just built with steel and stone, but with purpose, integrity, and heart.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mt-4">
-                    Our journey began with a simple yet powerful vision: to redefine real estate as a deeply
-                    human experience. We don't just construct buildings—we create spaces where families grow,
-                    businesses thrive, and aspirations find a home. Every project is a promise, carried out
-                    with care, conscience, and long-term commitment.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mt-4">
-                    We are honoured to build for those who value more than beauty, those who seek trust,
-                    legacy, and a sense of belonging. At Soldiers Builders BD, luxury is not only in how a space
-                    looks, but in how it feels, and what it stands for.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mt-4">
-                    In every design, there is vision. In every foundation, resilience. And behind every
-                    achievement, a passion that drives us forward."
+                    "At Soldiers Builders, we do more than shape skylines, we shape futures. As someone who
+                    has dedicated their life to serving the nation, I understand the importance of creating
+                    spaces that not only provide shelter but also foster community, build legacy, and a sense of belonging. At Soldiers Builders, luxury is not only in how a space
+                    looks, but in how it makes you feel."
                   </p>
                 </div>
               </div>
@@ -502,16 +503,8 @@ const About = () => {
                   <h3 className="text-2xl font-bold text-white mb-2">Managing Director's Message</h3>
                   <h4 className="text-lg text-yellow-400 mb-4">Brigadier General Md Zobaidur Rahman</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    "In a rapidly transforming Bangladesh, where skylines are rising and the rhythm of life
-                    is quickening, the need for thoughtfully built, enduring spaces has never been more urgent.
-                    As cities grow, so do the dreams of the people within them, and those dreams deserve more
-                    than concrete and glass. They deserve commitment. They deserve precision. They deserve integrity.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mt-4">
-                    At Soldiers Builders BD, we bring a unique perspective - shaped by my years in uniform, where
-                    every mission demanded clarity, accountability, and execution without error. These same
-                    principles guide our approach to every project. Our discipline is not just military; it is
-                    moral, architectural, and deeply human.
+                    At Soldiers Builders, we bring a unique perspective - shaped by my years in uniform, where
+                    precision, discipline, and attention to detail were not just values, but necessities.
                   </p>
                   <p className="text-gray-300 leading-relaxed mt-4">
                     We serve individuals, families, and businesses who want more than a property. They want
@@ -543,12 +536,9 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Leadership Team
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+              Meet the distinguished leaders who guide Soldiers Builders with military precision and vision
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Meet the distinguished leaders who guide Soldiers Builders BD with military precision and vision
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, Calendar } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Calendar, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ const Contact = () => {
 
     // Compose email body with all form data
     const emailBody = `
-Contact Form Submission from Soldiers Builders BD Website
+Contact Form Submission from Soldiers Builders Website
 
 Name: ${formData.name}
 Email: ${formData.email}
@@ -28,41 +28,17 @@ Message:
 ${formData.message}
 
 ---
-This message was sent from the Soldiers Builders BD website contact form.
+This message was sent from the Soldiers Builders website contact form.
     `.trim();
 
     // Create Gmail compose URL
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=soldiers.builders.bd@gmail.com&su=${encodeURIComponent(formData.subject || 'Contact Form Submission')}&body=${encodeURIComponent(emailBody)}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=info@soldiersbuilders.com&su=${encodeURIComponent(formData.subject || 'Contact Form Submission')}&body=${encodeURIComponent(emailBody)}`;
 
     // Open Gmail in a new tab
     window.open(gmailUrl, '_blank');
   };
 
-  const handleScheduleVisit = () => {
-    // Compose email body for visit scheduling
-    const emailBody = `
-Visit Scheduling Request from Soldiers Builders BD Website
 
-Name: ${formData.name || '[Please fill your name]'}
-Email: ${formData.email || '[Please fill your email]'}
-Phone: ${formData.phone || '[Please fill your phone]'}
-Project Interest: ${formData.projectInterest || 'Not specified'}
-
-I would like to schedule a visit to your project site. Please contact me to arrange a convenient time.
-
-Additional Message:
-${formData.message || 'No additional message'}
-
----
-This request was sent from the Soldiers Builders BD website contact form.
-    `.trim();
-
-    // Create Gmail compose URL for visit scheduling
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=soldiers.builders.bd@gmail.com&su=${encodeURIComponent('Visit Scheduling Request')}&body=${encodeURIComponent(emailBody)}`;
-
-    // Open Gmail in a new tab
-    window.open(gmailUrl, '_blank');
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -87,7 +63,7 @@ This request was sent from the Soldiers Builders BD website contact form.
     {
       icon: Mail,
       title: "Email",
-      details: "soldiers.builders.bd@gmail.com",
+      details: "info@soldiersbuilders.com",
       color: "bg-blue-500"
     },
     {
@@ -110,17 +86,36 @@ This request was sent from the Soldiers Builders BD website contact form.
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800" style={{ marginTop: '64px' }}>
+        <div className="absolute inset-0">
+          <img
+            src="/assets/images/projects/habibs-utopia/WhatsApp Image 2025-06-23 at 3.14.29 PM.jpeg"
+            alt="Contact Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/assets/images/SB_Logo_white_background-removebg-preview copy.png"
+              alt="Soldiers Builders Logo"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{
+              WebkitTextStroke: '0.8px #000',
+              textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+            }}>
               Contact <span className="text-yellow-400">Us</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -151,6 +146,55 @@ This request was sent from the Soldiers Builders BD website contact form.
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section className="py-16 bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h2 className="text-3xl font-bold text-white mb-6">Follow Us</h2>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Stay connected with us on social media for the latest updates, project photos, and real estate insights
+            </p>
+            <div className="flex justify-center space-x-6">
+              <motion.a
+                whileHover={{ scale: 1.1, y: -5 }}
+                href="https://www.facebook.com/soldiersbuilders/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 p-4 rounded-xl hover:bg-gray-700 transition-all duration-300 group"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-8 w-8 text-yellow-400 group-hover:text-yellow-300" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -5 }}
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 p-4 rounded-xl hover:bg-gray-700 transition-all duration-300 group"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-8 w-8 text-yellow-400 group-hover:text-yellow-300" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -5 }}
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 p-4 rounded-xl hover:bg-gray-700 transition-all duration-300 group"
+                aria-label="Subscribe to our YouTube channel"
+              >
+                <Youtube className="h-8 w-8 text-yellow-400 group-hover:text-yellow-300" />
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -276,16 +320,15 @@ This request was sent from the Soldiers Builders BD website contact form.
                     <Send className="h-5 w-5" />
                     <span>Send Message</span>
                   </motion.button>
-                  <motion.button
+                  <motion.a
+                    href="tel:+8801769100680"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    type="button"
-                    onClick={handleScheduleVisit}
-                    className="flex-1 border-2 border-yellow-400 text-yellow-400 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 flex items-center justify-center space-x-2"
+                    className="flex-1 border-2 border-yellow-400 text-yellow-400 py-3 rounded-lg font-semibold hover:bg-yellow-400/20 hover:text-yellow-300 transition-all duration-200 flex items-center justify-center space-x-2"
                   >
                     <Calendar className="h-5 w-5" />
                     <span>Schedule Visit</span>
-                  </motion.button>
+                  </motion.a>
                 </div>
               </form>
             </motion.div>
@@ -321,13 +364,13 @@ This request was sent from the Soldiers Builders BD website contact form.
                       <p className="text-gray-400 hover:text-yellow-400">+880 1769-100680</p>
                     </div>
                   </a>
-                  <a href="mailto:soldiers.builders.bd@gmail.com" className="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-lg transition-colors duration-200">
+                  <a href="mailto:info@soldiersbuilders.com" className="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-lg transition-colors duration-200">
                     <div className="bg-blue-500 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <p className="text-white font-medium">Email us</p>
-                      <p className="text-gray-400 hover:text-yellow-400">soldiers.builders.bd@gmail.com</p>
+                      <p className="text-gray-400 hover:text-yellow-400">info@soldiersbuilders.com</p>
                     </div>
                   </a>
                 </div>

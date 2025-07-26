@@ -117,17 +117,28 @@ const FAQs = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800" style={{ marginTop: '64px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/assets/images/SB_Logo_white_background-removebg-preview copy.png"
+              alt="Soldiers Builders Logo"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{
+              WebkitTextStroke: '0.8px #000',
+              textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+            }}>
               Frequently Asked <span className="text-yellow-400">Questions</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -262,8 +273,8 @@ const FAQs = () => {
                 <span className="text-2xl font-bold text-gray-900">📧</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
-              <a href="mailto:soldiers.builders.bd@gmail.com" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
-                soldiers.builders.bd@gmail.com
+              <a href="mailto:info@soldiersbuilders.com" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
+                info@soldiersbuilders.com
               </a>
             </motion.div>
             <motion.div

@@ -16,19 +16,19 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false); // Default to light mode
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
+    // Check for saved theme preference or default to dark mode
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       const isDark = savedTheme === 'dark';
       setIsDarkMode(isDark);
       document.documentElement.classList.toggle('light-mode', !isDark);
     } else {
-      // Default to light mode
-      localStorage.setItem('theme', 'light');
-      document.documentElement.classList.add('light-mode');
+      // Default to dark mode
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.remove('light-mode');
     }
   }, []);
 

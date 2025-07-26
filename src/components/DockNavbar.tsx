@@ -71,15 +71,15 @@ function DockNavItem({
         to={item.href}
         className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg block cursor-pointer ${
           isActive
-            ? 'text-yellow-400 bg-yellow-400/15 shadow-lg shadow-yellow-400/20'
-            : 'text-gray-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:shadow-md'
+            ? 'text-green-400 bg-green-400/15 shadow-lg shadow-green-400/20'
+            : 'text-gray-300 hover:text-green-400 hover:bg-green-400/10 hover:shadow-md'
         }`}
       >
         {item.name}
         {isActive && (
           <motion.div
             layoutId="navbar-dock-indicator"
-            className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-400 rounded-full shadow-lg shadow-yellow-400/50"
+            className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-400 rounded-full shadow-lg shadow-green-400/50"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}

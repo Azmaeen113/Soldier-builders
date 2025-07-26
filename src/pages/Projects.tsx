@@ -152,7 +152,7 @@ const Projects = () => {
       slug: "lutfors-uttorayon",
       location: "BLDGN # 15, Road # Avenue 2, Block # C, Chondrima Model Town, Mohammadpur, Dhaka",
       image: "/assets/images/projects/bondhu-bilash/WhatsApp Image 2025-06-22 at 3.10.15 PM.jpeg",
-      description: "Making Dreams Come to Life",
+      description: "We build your dreams",
       landSize: "5 Katha (3600 SFT)",
       buildingType: "G+9",
       apartments: 8,
@@ -169,7 +169,7 @@ const Projects = () => {
       slug: "bondhu-bilash",
       location: "BLDG # 11, Road # 4, Block # C, Chondrima Model Town, Mohammadpur, Dhaka",
       image: "/assets/images/projects/bondhu-bilash/WhatsApp Image 2025-06-22 at 3.10.15 PM.jpeg",
-      description: "Making Dreams Come to Life",
+      description: "We build your dreams",
       landSize: "5 Katha (3600 SFT)",
       buildingType: "G+9",
       apartments: 8,
@@ -186,7 +186,7 @@ const Projects = () => {
       slug: "chondrima-bilash",
       location: "BLDG # 10, Road # 9, Block # B, Chondrima Model Town, Mohammadpur, Dhaka",
       image: "/assets/images/projects/chandrima-bilash/WhatsApp Image 2025-06-22 at 3.21.45 PM.jpeg",
-      description: "Making Dreams Come to Life",
+      description: "We build your dreams",
       landSize: "6 Katha (4320 SFT)",
       buildingType: "B+G+9",
       apartments: 8,
@@ -206,17 +206,36 @@ const Projects = () => {
     : allProjects.filter(project => project.status === filter);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800" style={{ marginTop: '64px' }}>
+        <div className="absolute inset-0">
+          <img
+            src="/assets/images/projects/tilottoma/m-01_1 - Photo.jpg"
+            alt="Projects Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/assets/images/SB_Logo_white_background-removebg-preview copy.png"
+              alt="Soldiers Builders Logo"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{
+              WebkitTextStroke: '0.8px #000',
+              textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+            }}>
               Our <span className="text-yellow-400">Projects</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">

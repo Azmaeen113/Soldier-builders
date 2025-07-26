@@ -2,9 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link id="favicon" rel="icon" type="image/png" href="/assets/images/SB_Logo-removebg-preview.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soldiers Builders BD - Luxury Real Estate Website</title>
+    <title>Soldiers Builders - Luxury Real Estate Website</title>
+    <script>
+      (function() {
+        function setFavicon() {
+          var favicon = document.getElementById('favicon');
+          var theme = localStorage.getItem('theme');
+          if (theme === 'light') {
+            favicon.href = '/assets/images/SB_Logo_white_background-removebg-preview copy.png';
+          } else {
+            favicon.href = '/assets/images/SB_Logo-removebg-preview.png';
+          }
+        }
+        setFavicon();
+        window.addEventListener('storage', setFavicon);
+        window.addEventListener('DOMContentLoaded', setFavicon);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
